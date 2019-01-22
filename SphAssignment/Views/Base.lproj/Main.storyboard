@@ -29,7 +29,7 @@
         <!--Mobile Data Usage-->
         <scene sceneID="fJN-mM-oty">
             <objects>
-                <viewController id="WUY-fQ-0Mf" customClass="Data" sceneMemberID="viewController">
+                <viewController id="WUY-fQ-0Mf" customClass="DataUsageViewController" customModule="SphAssignment" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gCh-Av-10p">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

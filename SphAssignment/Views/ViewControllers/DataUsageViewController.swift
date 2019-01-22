@@ -49,7 +49,7 @@ class DataUsageViewController: UIViewController {
     }
     
     @IBAction func refresh(_ sender: Any) {
-
+        MobileDataUsageStore.shared.initMobileDataUsageStore()
     }
 }
 

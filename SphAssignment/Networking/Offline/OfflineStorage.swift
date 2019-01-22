@@ -1,5 +1,5 @@
 //
-//  MobileUsageDataStore.swift
+//  OfflineStorage.swift
 //  SphAssignment
 //
 //  Created by Nobin Thomas on 22/1/19.
