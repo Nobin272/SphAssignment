@@ -21,6 +21,7 @@ class TableViewRecordModel {
     }
     
     class func getTableViewRecords(responseItems: [MobileDataRecord]?) -> [TableViewRecordModel]  {
+        // Filtering API DATA and converting for Tableview display
         var records: [String: [MobileDataRecord]] = [:]
         if let res = responseItems, let count = responseItems?.count, count > 0 {
             for item in res {
