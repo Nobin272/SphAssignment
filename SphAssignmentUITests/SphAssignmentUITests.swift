@@ -27,6 +27,16 @@ class SphAssignmentUITests: XCTestCase {
     }
 
     func testExample() {
+        
+        let app = XCUIApplication()
+        let tablesQuery = app.tables
+        tablesQuery.staticTexts["2011"].tap()
+        
+        let dismissButton = app.alerts["Info"].buttons["Dismiss"]
+        dismissButton.tap()
+        tablesQuery/*@START_MENU_TOKEN@*/.cells.containing(.staticText, identifier:"2004")/*[[".cells.containing(.staticText, identifier:\"0.0009269999999999999\")",".cells.containing(.staticText, identifier:\"2004\")"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.buttons["More Info"].tap()
+        app.alerts["Alert"].buttons["Dismiss"].tap()
+        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["2011"]/*[[".cells.staticTexts[\"2011\"]",".staticTexts[\"2011\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.swipeUp()
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }

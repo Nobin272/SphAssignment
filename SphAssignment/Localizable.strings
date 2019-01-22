@@ -12,3 +12,5 @@
 "DataUsageView.decreasePopup.message" = "The data usage is decreasing in this year";
 
 "Network.error.message" = "Sorry! An error occured while processing your request. Please try again later.";
+
+"DataUsageView.view.pullupMessage" = "Pull up to load more";

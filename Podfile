@@ -16,7 +16,7 @@ target 'SphAssignmentTests' do
     # Pods for testing
     
     #networking
-    pod 'SwiftyJSON', '~> 4.0'
+    #pod 'SwiftyJSON', '~> 4.0'
     pod 'UIScrollView-InfiniteScroll', '~> 1.1.0'
     
 end
@@ -26,9 +26,7 @@ target 'SphAssignmentUITests' do
     # Pods for testing
     
     #networking
-    pod 'SwiftyJSON', '~> 4.0'
+    #pod 'SwiftyJSON', '~> 4.0'
     pod 'UIScrollView-InfiniteScroll', '~> 1.1.0'
     
 end
-
-#pod 'Moya/RxSwift', :git => 'https://github.com/Moya/Moya.git', :branch => '10.0.0-dev'
