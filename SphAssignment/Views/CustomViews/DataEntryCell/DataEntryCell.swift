@@ -28,7 +28,7 @@ class DataEntryCell: UITableViewCell {
     
     var delegate:DataEntryCellDelegate?
     
-    var record: MobileDataRecord? {
+    var record: TableViewRecordModel? {
         didSet {
             self.setRecordValues(_record: record)
             layoutIfNeeded()
@@ -39,13 +39,19 @@ class DataEntryCell: UITableViewCell {
         selectionStyle              = .none
     }
     
-    func setRecordValues(_record: MobileDataRecord?) {
-        if let year = _record?.quarter {
+    func setRecordValues(_record: TableViewRecordModel?) {
+        if let year = _record?.year {
             lbYear.text = year
         }
         
-        if let tot = _record?.volumeOfMobileData {
+        if let tot = _record?.total {
             lbTotal.text = "\(tot)"
+        }
+        
+        if _record?.isDecrease == true {
+            btNotifyIcon.isHidden = true
+        } else {
+            btNotifyIcon.isHidden = false
         }
     }
 

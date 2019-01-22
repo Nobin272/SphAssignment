@@ -1,0 +1,11 @@
+/* 
+  File.strings
+  SphAssignment
+
+  Created by Nobin Thomas on 23/1/19.
+  Copyright © 2019 Nobin Thomas. All rights reserved.
+*/
+
+"DataUsageView.decreasePopup.dismiss" = "Dismiss";
+"DataUsageView.decreasePopup.title" = "Alert";
+"DataUsageView.decreasePopup.message" = "The data usage is decreasing in this year";

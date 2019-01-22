@@ -21,10 +21,12 @@ class DataUsageViewController: UIViewController {
     }()
     
     var records: [MobileDataRecord]? = []
+    var tbData:[TableViewRecordModel]? = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         records = []
+        tbData = []
         configureTable()
         reloadData()
     }
@@ -102,7 +104,7 @@ extension DataUsageViewController: MobileDataUsageStoreDelegate {
     func didDataRefresh(items: [MobileDataRecord]) {
         DispatchQueue.main.async {
             self.records = items
-            self.tbViewResults.reloadData()
+            self.refreshTableView()
         }
     }
     
@@ -110,15 +112,20 @@ extension DataUsageViewController: MobileDataUsageStoreDelegate {
         DispatchQueue.main.async {
             self.records?.append(contentsOf: newlyAdded)
             self.tbViewResults.finishInfiniteScroll()
-            self.tbViewResults.reloadData()
+            self.refreshTableView()
         }
+    }
+    
+    func refreshTableView () {
+        tbData = TableViewRecordModel.getTableViewRecords(responseItems: self.records)
+        self.tbViewResults.reloadData()
     }
 }
 
 extension DataUsageViewController: UITableViewDelegate, UITableViewDataSource, DataEntryCellDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Cell.DataEntryCell) as! DataEntryCell
-        cell.record = records?[indexPath.row]
+        cell.record = tbData?[indexPath.row]
         cell.delegate = self
         return cell
     }
@@ -129,12 +136,13 @@ extension DataUsageViewController: UITableViewDelegate, UITableViewDataSource, D
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return records?.count ?? 0
+        return tbData?.count ?? 0
     }
     
     // Data EntryCell image Tap
     func DataEntryCellDidTapImage(cell: DataEntryCell) {
-        
+        let alert = Helper.showPopupMessage(title: NSLocalizedString("DataUsageView.decreasePopup.title", comment: ""), message: NSLocalizedString("DataUsageView.decreasePopup.message", comment: ""), btnTitle: nil)
+        present(alert, animated: true, completion: nil)
     }
     
     

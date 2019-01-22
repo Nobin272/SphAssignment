@@ -10,10 +10,11 @@ import Foundation
 
 struct APIURL {
     static let baseURL = "https://data.gov.sg"
+    static let initialFetchLimit = "56"
 }
 
 struct APIParameter {
-    static let initialSearch = "/api/action/datastore_search?resource_id=a807b7ab-6cad-4aa6-87d0-e283a7353a0f&limit=10"
+    static let initialSearch = "/api/action/datastore_search?resource_id=a807b7ab-6cad-4aa6-87d0-e283a7353a0f&limit=\(APIURL.initialFetchLimit)"
     // Add new url params here
 }
 

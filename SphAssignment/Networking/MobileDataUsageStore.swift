@@ -65,7 +65,7 @@ extension MobileDataUsageStore: APIServiceDelegate {
     func requestCompletedWithSuccess(response: Any) {
         print("API Success dele: \(response)")
         if let records = processJsonAndStore(responseObject: response) {
-            if self.serviceType == ApiServiceType.ApiServiceFirst {
+            if self.serviceType == ApiServiceType.ApiServiceFirst {                
                 self.delegate?.didDataRefresh(items: records)
             } else if self.serviceType == ApiServiceType.ApiServiceNext {
                 self.delegate?.didDataChanged(newlyAdded: records)
