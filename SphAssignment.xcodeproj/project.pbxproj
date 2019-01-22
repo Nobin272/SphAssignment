@@ -27,6 +27,7 @@
 		CF71CBD921F74A5400A65E17 /* OfflineStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF71CBD821F74A5400A65E17 /* OfflineStorage.swift */; };
 		CF71CBDB21F74A8600A65E17 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF71CBDA21F74A8600A65E17 /* APIConstants.swift */; };
 		CF71CBDD21F74D4600A65E17 /* UsageDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF71CBDC21F74D4600A65E17 /* UsageDataModel.swift */; };
+		CF71CBDF21F750FD00A65E17 /* DataEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF71CBDE21F750FD00A65E17 /* DataEntryCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		CF71CBD821F74A5400A65E17 /* OfflineStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineStorage.swift; sourceTree = "<group>"; };
 		CF71CBDA21F74A8600A65E17 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		CF71CBDC21F74D4600A65E17 /* UsageDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageDataModel.swift; sourceTree = "<group>"; };
+		CF71CBDE21F750FD00A65E17 /* DataEntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataEntryCell.swift; sourceTree = "<group>"; };
 		EFE154F70EBE17EFA1DBBB59 /* Pods-SphAssignment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SphAssignment.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SphAssignment/Pods-SphAssignment.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -209,7 +211,7 @@
 		CF71CBC421F7453800A65E17 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
-				CF71CBCC21F7467500A65E17 /* DataEntryCell.xib */,
+				CF71CBE021F7544800A65E17 /* DataEntryCell */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -236,6 +238,15 @@
 				CF71CBDC21F74D4600A65E17 /* UsageDataModel.swift */,
 			);
 			path = DataModel;
+			sourceTree = "<group>";
+		};
+		CF71CBE021F7544800A65E17 /* DataEntryCell */ = {
+			isa = PBXGroup;
+			children = (
+				CF71CBCC21F7467500A65E17 /* DataEntryCell.xib */,
+				CF71CBDE21F750FD00A65E17 /* DataEntryCell.swift */,
+			);
+			path = DataEntryCell;
 			sourceTree = "<group>";
 		};
 		E9ABD8101CCFA055437AB3CB /* Pods */ = {
@@ -540,6 +551,7 @@
 				CF71CBD121F7472400A65E17 /* Constants.swift in Sources */,
 				CF71CBCB21F7461300A65E17 /* MobileDataUsageStore.swift in Sources */,
 				CF71CBCF21F7471200A65E17 /* Helper.swift in Sources */,
+				CF71CBDF21F750FD00A65E17 /* DataEntryCell.swift in Sources */,
 				CF71CBD921F74A5400A65E17 /* OfflineStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

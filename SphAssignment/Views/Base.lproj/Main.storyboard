@@ -33,7 +33,19 @@
                     <view key="view" contentMode="scaleToFill" id="gCh-Av-10p">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dgg-Wx-AMQ">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dgg-Wx-AMQ" firstAttribute="trailing" secondItem="Gav-1g-2K0" secondAttribute="trailing" id="9Xz-XX-OHP"/>
+                            <constraint firstItem="dgg-Wx-AMQ" firstAttribute="top" secondItem="Gav-1g-2K0" secondAttribute="top" id="QVt-TA-GY4"/>
+                            <constraint firstItem="dgg-Wx-AMQ" firstAttribute="leading" secondItem="Gav-1g-2K0" secondAttribute="leading" id="bHl-53-Riq"/>
+                            <constraint firstItem="dgg-Wx-AMQ" firstAttribute="bottom" secondItem="Gav-1g-2K0" secondAttribute="bottom" id="v8d-BT-nMm"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Gav-1g-2K0"/>
                     </view>
                     <navigationItem key="navigationItem" title="Mobile Data Usage" id="QBz-Qz-gUC">
@@ -43,10 +55,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tbViewResults" destination="dgg-Wx-AMQ" id="GU2-5v-0IE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jTY-KP-bSQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-66" y="134"/>
+            <point key="canvasLocation" x="-66.400000000000006" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>

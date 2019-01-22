@@ -31,4 +31,9 @@ struct Constants {
         static let fontBold25               = UIFont.monospacedDigitSystemFont(ofSize: 27.5, weight: .bold)
     }
     
+    struct Cell {
+        // Cell - DataUsageViewController
+        static let DataEntryCell                 = "DataEntryCell"
+    }
+    
 }

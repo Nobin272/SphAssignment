@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DataEntryCell" rowHeight="112" id="Yum-nS-6No" customClass="DataEntryCell" customModule="SphAssignment" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="112"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Yum-nS-6No" id="KZi-gb-xot">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="111.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pj4-o9-KOe">
+                        <rect key="frame" x="16" y="18" width="291" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZEh-VL-mlD">
+                        <rect key="frame" x="16" y="83" width="297" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sws-mI-a2O">
+                        <rect key="frame" x="329" y="45" width="22" height="22"/>
+                    </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NBn-io-OlE">
+                        <rect key="frame" x="0.0" y="111" width="375" height="0.5"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="mHp-bg-2mp"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="Pj4-o9-KOe" secondAttribute="trailing" constant="52" id="Fz9-Az-eDn"/>
+                    <constraint firstItem="Sws-mI-a2O" firstAttribute="centerY" secondItem="KZi-gb-xot" secondAttribute="centerY" id="HCy-3Y-mFx"/>
+                    <constraint firstAttribute="trailing" secondItem="NBn-io-OlE" secondAttribute="trailing" id="JVt-jp-P8B"/>
+                    <constraint firstAttribute="bottom" secondItem="NBn-io-OlE" secondAttribute="bottom" id="KAG-4E-MOb"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Sws-mI-a2O" secondAttribute="trailing" constant="8" id="Nm5-eY-NzS"/>
+                    <constraint firstItem="ZEh-VL-mlD" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Pj4-o9-KOe" secondAttribute="bottom" constant="5" id="VBx-CY-xUb"/>
+                    <constraint firstItem="Pj4-o9-KOe" firstAttribute="leading" secondItem="KZi-gb-xot" secondAttribute="leadingMargin" id="ajq-r5-SGl"/>
+                    <constraint firstItem="Pj4-o9-KOe" firstAttribute="top" secondItem="KZi-gb-xot" secondAttribute="topMargin" constant="7" id="dt1-5R-qzj"/>
+                    <constraint firstItem="NBn-io-OlE" firstAttribute="top" secondItem="ZEh-VL-mlD" secondAttribute="bottom" constant="7" id="hLQ-6X-RuF"/>
+                    <constraint firstItem="NBn-io-OlE" firstAttribute="leading" secondItem="KZi-gb-xot" secondAttribute="leading" id="oRr-FV-atj"/>
+                    <constraint firstAttribute="trailing" secondItem="ZEh-VL-mlD" secondAttribute="trailing" constant="62" id="vBh-PB-b8A"/>
+                    <constraint firstItem="ZEh-VL-mlD" firstAttribute="leading" secondItem="KZi-gb-xot" secondAttribute="leadingMargin" id="xES-fu-9T6"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="lbTotal" destination="ZEh-VL-mlD" id="AUb-16-07c"/>
+                <outlet property="lbYear" destination="Pj4-o9-KOe" id="ghz-xZ-ps7"/>
+                <outlet property="vLine" destination="NBn-io-OlE" id="51C-VX-A1N"/>
+            </connections>
+            <point key="canvasLocation" x="44" y="102.54872563718142"/>
+        </tableViewCell>
+    </objects>
+</document>
