@@ -8,4 +8,5 @@
 
 "DataUsageView.decreasePopup.dismiss" = "Dismiss";
 "DataUsageView.decreasePopup.title" = "Alert";
+"DataUsageView.decreasePopup.info" = "Info";
 "DataUsageView.decreasePopup.message" = "The data usage is decreasing in this year";

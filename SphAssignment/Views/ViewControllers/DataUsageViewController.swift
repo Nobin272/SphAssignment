@@ -139,9 +139,21 @@ extension DataUsageViewController: UITableViewDelegate, UITableViewDataSource, D
         return tbData?.count ?? 0
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let title = "\(NSLocalizedString("DataUsageView.decreasePopup.info", comment: ""))"
+        let record = tbData?[indexPath.row]
+        let qCount = record?.records?.count ?? 0
+        let message = "\(qCount) Quarters"
+        
+        let alert = Helper.showPopupMessage(title: title, message: message, btnTitle: nil)
+        present(alert, animated: true, completion: nil)
+    }
+    
     // Data EntryCell image Tap
     func DataEntryCellDidTapImage(cell: DataEntryCell) {
-        let alert = Helper.showPopupMessage(title: NSLocalizedString("DataUsageView.decreasePopup.title", comment: ""), message: NSLocalizedString("DataUsageView.decreasePopup.message", comment: ""), btnTitle: nil)
+        let title = "\(NSLocalizedString("DataUsageView.decreasePopup.title", comment: ""))"
+        
+        let alert = Helper.showPopupMessage(title: title, message: NSLocalizedString("DataUsageView.decreasePopup.message", comment: ""), btnTitle: nil)
         present(alert, animated: true, completion: nil)
     }
     

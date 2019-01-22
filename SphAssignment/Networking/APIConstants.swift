@@ -10,7 +10,7 @@ import Foundation
 
 struct APIURL {
     static let baseURL = "https://data.gov.sg"
-    static let initialFetchLimit = "56"
+    static let initialFetchLimit = "40"
 }
 
 struct APIParameter {
