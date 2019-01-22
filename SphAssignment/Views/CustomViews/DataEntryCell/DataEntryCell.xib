@@ -20,18 +20,21 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pj4-o9-KOe">
                         <rect key="frame" x="16" y="18" width="291" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZEh-VL-mlD">
                         <rect key="frame" x="16" y="83" width="297" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sws-mI-a2O">
                         <rect key="frame" x="329" y="45" width="22" height="22"/>
+                        <connections>
+                            <action selector="btnTapNotifiyIcon:" destination="Yum-nS-6No" eventType="touchUpInside" id="oRb-qN-ZD8"/>
+                        </connections>
                     </button>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NBn-io-OlE">
                         <rect key="frame" x="0.0" y="111" width="375" height="0.5"/>
@@ -57,6 +60,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="btNotifyIcon" destination="Sws-mI-a2O" id="NOC-tg-q7T"/>
                 <outlet property="lbTotal" destination="ZEh-VL-mlD" id="AUb-16-07c"/>
                 <outlet property="lbYear" destination="Pj4-o9-KOe" id="ghz-xZ-ps7"/>
                 <outlet property="vLine" destination="NBn-io-OlE" id="51C-VX-A1N"/>

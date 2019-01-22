@@ -21,6 +21,8 @@ class MobileDataUsageStore {
     }()
     
     var records: [MobileDataResponse]? = []
+    var total: Int?
+    var nextUrl: String?
     var delegate: MobileDataUsageStoreDelegate?
     var serviceType: ApiServiceType?
     
@@ -32,6 +34,8 @@ class MobileDataUsageStore {
         if let success = json[APIKeys.success].bool, success == true, let result = json[APIKeys.result].dictionary, result.count > 0 {
             let customResponeObject = MobileDataResponse.init(responseObj: json[APIKeys.result])
             records?.append(customResponeObject)
+            total = customResponeObject.total
+            nextUrl = customResponeObject.link?.next
             return customResponeObject.records
         }
         
@@ -47,13 +51,23 @@ extension MobileDataUsageStore: APIServiceDelegate {
         APIServices.shared.loadInitialService()
     }
     
+    func nextMobileDataUsageStore() {
+        APIServices.shared.delegate = self
+        self.serviceType = ApiServiceType.ApiServiceNext
+        if let next = nextUrl {
+            APIServices.shared.loadService(nextUrl: next)
+        } else {
+            self.delegate?.didDataChanged(newlyAdded: [])
+        }
+    }
+    
     
     func requestCompletedWithSuccess(response: Any) {
         print("API Success dele: \(response)")
         if let records = processJsonAndStore(responseObject: response) {
             if self.serviceType == ApiServiceType.ApiServiceFirst {
                 self.delegate?.didDataRefresh(items: records)
-            } else if self.serviceType == ApiServiceType.ApiServiceFirst {
+            } else if self.serviceType == ApiServiceType.ApiServiceNext {
                 self.delegate?.didDataChanged(newlyAdded: records)
             }
         } else {

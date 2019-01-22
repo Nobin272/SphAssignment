@@ -65,13 +65,38 @@ extension DataUsageViewController: MobileDataUsageStoreDelegate {
         tbViewResults.separatorStyle = .none
         tbViewResults.backgroundColor = .clear
         registerCells()
+        configureInfiniteTableView()
         tbViewResults.delegate = self
         tbViewResults.dataSource = self
+    }
+    
+    func configureInfiniteTableView() {
+        tbViewResults.infiniteScrollIndicatorView = CustomInfiniteIndicator(frame: CGRect(x: 0, y: 0, width: 24, height: 24))
+        tbViewResults.infiniteScrollIndicatorMargin = 40
+        tbViewResults.infiniteScrollTriggerOffset = 500
+        tbViewResults.addInfiniteScroll { [weak self] (tableView) -> Void in
+            self?.reloadNextItems()
+        }
+        tbViewResults.setShouldShowInfiniteScrollHandler { [weak self] (tableView) -> Bool in
+            if let tot = MobileDataUsageStore.shared.total, let rec = self?.records?.count {
+                return tot > rec
+            }
+            return true;
+         }
+        
+        
+        // load initial data
+        tbViewResults.beginInfiniteScroll(true)
     }
     
     func reloadData() {
         MobileDataUsageStore.shared.delegate = self
         MobileDataUsageStore.shared.initMobileDataUsageStore()
+    }
+    
+    func reloadNextItems() {
+        MobileDataUsageStore.shared.delegate = self
+        MobileDataUsageStore.shared.nextMobileDataUsageStore()
     }
     
     func didDataRefresh(items: [MobileDataRecord]) {
@@ -83,7 +108,8 @@ extension DataUsageViewController: MobileDataUsageStoreDelegate {
     
     func didDataChanged(newlyAdded: [MobileDataRecord]) {
         DispatchQueue.main.async {
-            self.records = newlyAdded
+            self.records?.append(contentsOf: newlyAdded)
+            self.tbViewResults.finishInfiniteScroll()
             self.tbViewResults.reloadData()
         }
     }

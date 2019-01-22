@@ -28,6 +28,8 @@
 		CF71CBDB21F74A8600A65E17 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF71CBDA21F74A8600A65E17 /* APIConstants.swift */; };
 		CF71CBDD21F74D4600A65E17 /* UsageDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF71CBDC21F74D4600A65E17 /* UsageDataModel.swift */; };
 		CF71CBDF21F750FD00A65E17 /* DataEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF71CBDE21F750FD00A65E17 /* DataEntryCell.swift */; };
+		CF71CBE521F7656D00A65E17 /* CustomInfiniteIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF71CBE421F7656D00A65E17 /* CustomInfiniteIndicator.swift */; };
+		CF71CBE721F76C1C00A65E17 /* DisplayDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF71CBE621F76C1C00A65E17 /* DisplayDataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +82,9 @@
 		CF71CBDA21F74A8600A65E17 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		CF71CBDC21F74D4600A65E17 /* UsageDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageDataModel.swift; sourceTree = "<group>"; };
 		CF71CBDE21F750FD00A65E17 /* DataEntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataEntryCell.swift; sourceTree = "<group>"; };
+		CF71CBE221F763A600A65E17 /* SphAssignment-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SphAssignment-Bridging-Header.h"; sourceTree = "<group>"; };
+		CF71CBE421F7656D00A65E17 /* CustomInfiniteIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInfiniteIndicator.swift; sourceTree = "<group>"; };
+		CF71CBE621F76C1C00A65E17 /* DisplayDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayDataModel.swift; sourceTree = "<group>"; };
 		EFE154F70EBE17EFA1DBBB59 /* Pods-SphAssignment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SphAssignment.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SphAssignment/Pods-SphAssignment.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,6 +151,7 @@
 		CF71CB9021F7380D00A65E17 /* SphAssignment */ = {
 			isa = PBXGroup;
 			children = (
+				CF71CBE221F763A600A65E17 /* SphAssignment-Bridging-Header.h */,
 				CF71CBC321F7452900A65E17 /* Views */,
 				CF71CBC021F7450000A65E17 /* Networking */,
 				CF71CBBF21F744CA00A65E17 /* General */,
@@ -211,6 +217,7 @@
 		CF71CBC421F7453800A65E17 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				CF71CBE321F7654B00A65E17 /* Extensions */,
 				CF71CBE021F7544800A65E17 /* DataEntryCell */,
 			);
 			path = CustomViews;
@@ -236,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				CF71CBDC21F74D4600A65E17 /* UsageDataModel.swift */,
+				CF71CBE621F76C1C00A65E17 /* DisplayDataModel.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -247,6 +255,14 @@
 				CF71CBDE21F750FD00A65E17 /* DataEntryCell.swift */,
 			);
 			path = DataEntryCell;
+			sourceTree = "<group>";
+		};
+		CF71CBE321F7654B00A65E17 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CF71CBE421F7656D00A65E17 /* CustomInfiniteIndicator.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		E9ABD8101CCFA055437AB3CB /* Pods */ = {
@@ -544,10 +560,12 @@
 				CF71CBC221F7451E00A65E17 /* Networking.swift in Sources */,
 				CF71CBDB21F74A8600A65E17 /* APIConstants.swift in Sources */,
 				CF71CBC721F745A500A65E17 /* DataUsageViewController.swift in Sources */,
+				CF71CBE521F7656D00A65E17 /* CustomInfiniteIndicator.swift in Sources */,
 				CF71CBDD21F74D4600A65E17 /* UsageDataModel.swift in Sources */,
 				CF71CBC921F745EF00A65E17 /* APIServices.swift in Sources */,
 				CF71CB9221F7380D00A65E17 /* AppDelegate.swift in Sources */,
 				CF71CBD321F7475E00A65E17 /* ConstantStrings.swift in Sources */,
+				CF71CBE721F76C1C00A65E17 /* DisplayDataModel.swift in Sources */,
 				CF71CBD121F7472400A65E17 /* Constants.swift in Sources */,
 				CF71CBCB21F7461300A65E17 /* MobileDataUsageStore.swift in Sources */,
 				CF71CBCF21F7471200A65E17 /* Helper.swift in Sources */,
@@ -736,6 +754,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nobin.SphAssignment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SphAssignment/SphAssignment-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -754,6 +773,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nobin.SphAssignment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SphAssignment/SphAssignment-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
