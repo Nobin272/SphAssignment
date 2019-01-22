@@ -166,13 +166,13 @@
 		CF71CB9021F7380D00A65E17 /* SphAssignment */ = {
 			isa = PBXGroup;
 			children = (
-				CF71CBE221F763A600A65E17 /* SphAssignment-Bridging-Header.h */,
 				CF71CBC321F7452900A65E17 /* Views */,
 				CF71CBC021F7450000A65E17 /* Networking */,
 				CF71CBBF21F744CA00A65E17 /* General */,
 				CF71CB9821F7380F00A65E17 /* Assets.xcassets */,
 				CF71CB9D21F7380F00A65E17 /* Info.plist */,
 				CF71CBE821F780BE00A65E17 /* Localizable.strings */,
+				CF71CBE221F763A600A65E17 /* SphAssignment-Bridging-Header.h */,
 			);
 			path = SphAssignment;
 			sourceTree = "<group>";

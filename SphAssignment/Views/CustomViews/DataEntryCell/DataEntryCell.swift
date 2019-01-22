@@ -45,7 +45,8 @@ class DataEntryCell: UITableViewCell {
         }
         
         if let tot = _record?.total {
-            lbTotal.text = "\(tot)"
+            let totalStr = String(format: "%.5f", tot)
+            lbTotal.text = "Total: \(totalStr)"
         }
         
         if _record?.isDecrease == true {

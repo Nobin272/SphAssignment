@@ -55,7 +55,7 @@ class TableViewRecordModel {
                 }
             }
             
-            if tot != 0 {
+            if tot != 0, let ye = Int(year),  ye > 2007, ye < 2019 {
                 // Add new data record - to display in tableview
                 tableViewRecords.append(TableViewRecordModel.init(year: year, total: tot, records: vals, isDecrease: isDec))
             }

@@ -61,6 +61,14 @@ class MobileDataRecord {
         self.volumeOfMobileData = record[APIKeys.volume_of_mobile_data].doubleValue
         self.quarter = record[APIKeys.quarter].stringValue
     }
+    
+    func getStringValue() -> String? {
+        if let q = self.quarter?.split(separator: "-"), q.count > 0 {
+            let qVal = "\(q[1])"
+            return String(format: "%@ - %0.5f", qVal, self.volumeOfMobileData ?? 0)
+        }
+        return nil
+    }
 }
 
 class MobileDataLinks {

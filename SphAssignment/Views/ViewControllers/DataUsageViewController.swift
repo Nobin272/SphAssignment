@@ -150,10 +150,38 @@ extension DataUsageViewController: UITableViewDelegate, UITableViewDataSource, D
         let title = "\(NSLocalizedString("DataUsageView.decreasePopup.info", comment: ""))"
         let record = tbData?[indexPath.row]
         let qCount = record?.records?.count ?? 0
-        let message = "\(qCount) Quarters"
+        var msg = ""
+        if let array = record?.records {
+            for it in array {
+                if let msg1 = it.getStringValue() {
+                    if msg == "" {
+                        msg += msg1
+                    } else {
+                        msg += ", " + msg1
+                    }
+                }
+            }
+        }
+        
+        let message = "\(qCount) Quarters \n" + msg
         
         let alert = Helper.showPopupMessage(title: title, message: message, btnTitle: nil)
         present(alert, animated: true, completion: nil)
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 40))
+        let headerText = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 40))
+        footerView.addSubview(headerText)
+        headerText.textAlignment = .center
+        headerText.textColor = UIColor.gray
+        headerText.font = Constants.SPHFont.fontLight13
+        headerText.text = NSLocalizedString("DataUsageView.view.pullupMessage", comment: "")
+        return footerView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 45
     }
     
     // Data EntryCell image Tap
