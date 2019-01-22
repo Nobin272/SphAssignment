@@ -38,6 +38,8 @@ class Networking {
         // Set up the URL request
         guard let url = URL(string: fullUrl) else {
             print("Error: cannot create URL")
+            let msg = "\(NSLocalizedString("Network.error.message", comment: ""))"
+            callback(KeyApiResponse.error.rawValue, ApiError.init(errorCode: 101, errorMessage: msg))
             return
         }
         let urlRequest = URLRequest(url: url)
@@ -52,12 +54,15 @@ class Networking {
             // check for any errors
             guard error == nil else {
                 print("error calling GET on /todos/1")
+                callback(KeyApiResponse.error.rawValue, ApiError.init(errorCode: 101, errorMessage: error.debugDescription))
                 print(error!)
                 return
             }
             // make sure we got data
             guard let responseData = data else {
                 print("Error: did not receive data")
+                let msg = "\(NSLocalizedString("Network.error.message", comment: ""))"
+                callback(KeyApiResponse.error.rawValue, ApiError.init(errorCode: 101, errorMessage: msg))
                 return
             }
             // parse the result as JSON, since that's what the API provides
@@ -65,11 +70,13 @@ class Networking {
                 guard let responseObject = try JSONSerialization.jsonObject(with: responseData, options: [])
                     as? [String: Any] else {
                         print("error trying to convert data to JSON")
+                        callback(KeyApiResponse.error.rawValue, ServiceError.InvalidJSON)
                         return
                 }
                 callback(KeyApiResponse.success.rawValue, responseObject)
             } catch  {
                 print("error trying to convert data to JSON")
+                callback(KeyApiResponse.error.rawValue, ServiceError.InvalidJSON)
                 return
             }
         }

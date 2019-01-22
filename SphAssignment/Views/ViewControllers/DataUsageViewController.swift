@@ -56,7 +56,7 @@ class DataUsageViewController: UIViewController {
     }
     
     @IBAction func refresh(_ sender: Any) {
-        
+        reloadData()
     }
 }
 
@@ -114,6 +114,13 @@ extension DataUsageViewController: MobileDataUsageStoreDelegate {
             self.tbViewResults.finishInfiniteScroll()
             self.refreshTableView()
         }
+    }
+    
+    func didDataFailed(message: String) {
+        let title = "\(NSLocalizedString("DataUsageView.decreasePopup.title", comment: ""))"
+        
+        let alert = Helper.showPopupMessage(title: title, message: message, btnTitle: nil)
+        present(alert, animated: true, completion: nil)
     }
     
     func refreshTableView () {

@@ -12,6 +12,7 @@ import SwiftyJSON
 protocol MobileDataUsageStoreDelegate: class {
     func didDataRefresh(items: [MobileDataRecord])
     func didDataChanged(newlyAdded: [MobileDataRecord])
+    func didDataFailed(message: String)
 }
 
 class MobileDataUsageStore {
@@ -72,10 +73,14 @@ extension MobileDataUsageStore: APIServiceDelegate {
             }
         } else {
             print("Error occured while parsing the data dele")
+            let m = "\(NSLocalizedString("Network.error.message", comment: ""))"
+            self.delegate?.didDataFailed(message: m)
         }
     }
     
     func requestCompletedWithError(message: String?) {
         print("Error occured dele: \(String(describing: message))")
+        let m = "\(NSLocalizedString("Network.error.message", comment: ""))"
+        self.delegate?.didDataFailed(message: m)
     }
 }
