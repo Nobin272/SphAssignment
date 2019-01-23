@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		46D7088021F8025B0044F9EA /* SphNetworkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D7087F21F8025B0044F9EA /* SphNetworkingTests.swift */; };
+		46D7088121F802CA0044F9EA /* APIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF71CBC821F745EF00A65E17 /* APIServices.swift */; };
+		46D7088221F803910044F9EA /* MobileDataUsageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF71CBCA21F7461300A65E17 /* MobileDataUsageStore.swift */; };
+		46D7088321F803EE0044F9EA /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF71CBC121F7451E00A65E17 /* Networking.swift */; };
+		46D7088421F803F30044F9EA /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF71CBDA21F74A8600A65E17 /* APIConstants.swift */; };
+		46D7088521F803FD0044F9EA /* UsageDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF71CBDC21F74D4600A65E17 /* UsageDataModel.swift */; };
+		46D7088721F80C820044F9EA /* SphNextServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D7088621F80C820044F9EA /* SphNextServiceTests.swift */; };
+		46D7088921F80C970044F9EA /* SphFailServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D7088821F80C970044F9EA /* SphFailServiceTests.swift */; };
 		537D379154C70DB76F9B4387 /* Pods_SphAssignmentTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30DA7E4A799DBB8E53697F55 /* Pods_SphAssignmentTests.framework */; };
 		7C20ABE4C5241D5A639DF692 /* Pods_SphAssignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE76A76081C19032B5AFDE27 /* Pods_SphAssignment.framework */; };
 		CC34B54B33836675AB95CF12 /* Pods_SphAssignmentUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDA2A02C2AC04ECA05237376 /* Pods_SphAssignmentUITests.framework */; };
@@ -53,6 +61,9 @@
 /* Begin PBXFileReference section */
 		0E6473C128808200D8AC2FAC /* Pods-SphAssignmentTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SphAssignmentTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SphAssignmentTests/Pods-SphAssignmentTests.release.xcconfig"; sourceTree = "<group>"; };
 		30DA7E4A799DBB8E53697F55 /* Pods_SphAssignmentTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SphAssignmentTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		46D7087F21F8025B0044F9EA /* SphNetworkingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SphNetworkingTests.swift; sourceTree = "<group>"; };
+		46D7088621F80C820044F9EA /* SphNextServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SphNextServiceTests.swift; sourceTree = "<group>"; };
+		46D7088821F80C970044F9EA /* SphFailServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SphFailServiceTests.swift; sourceTree = "<group>"; };
 		72BB59DCFB7A7EE4C1202D3E /* Pods-SphAssignmentUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SphAssignmentUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SphAssignmentUITests/Pods-SphAssignmentUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BF95344C3ECFC1C791DF34E2 /* Pods-SphAssignmentUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SphAssignmentUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SphAssignmentUITests/Pods-SphAssignmentUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BFE11E89827832BDF580FF61 /* Pods-SphAssignmentTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SphAssignmentTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SphAssignmentTests/Pods-SphAssignmentTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -181,6 +192,9 @@
 			isa = PBXGroup;
 			children = (
 				CF71CBA621F7380F00A65E17 /* SphAssignmentTests.swift */,
+				46D7087F21F8025B0044F9EA /* SphNetworkingTests.swift */,
+				46D7088621F80C820044F9EA /* SphNextServiceTests.swift */,
+				46D7088821F80C970044F9EA /* SphFailServiceTests.swift */,
 				CF71CBA821F7380F00A65E17 /* Info.plist */,
 			);
 			path = SphAssignmentTests;
@@ -421,16 +435,14 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SphAssignmentTests/Pods-SphAssignmentTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/UIScrollView-InfiniteScroll/UIScrollView_InfiniteScroll.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIScrollView_InfiniteScroll.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -443,15 +455,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-SphAssignment-checkManifestLockResult.txt",
 			);
@@ -465,15 +473,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-SphAssignmentUITests-checkManifestLockResult.txt",
 			);
@@ -487,16 +491,12 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SphAssignment/Pods-SphAssignment-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/UIScrollView-InfiniteScroll/UIScrollView_InfiniteScroll.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIScrollView_InfiniteScroll.framework",
@@ -511,15 +511,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SphAssignmentUITests/Pods-SphAssignmentUITests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/UIScrollView-InfiniteScroll/UIScrollView_InfiniteScroll.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIScrollView_InfiniteScroll.framework",
 			);
@@ -533,15 +529,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-SphAssignmentTests-checkManifestLockResult.txt",
 			);
@@ -578,7 +570,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46D7088521F803FD0044F9EA /* UsageDataModel.swift in Sources */,
 				CF71CBA721F7380F00A65E17 /* SphAssignmentTests.swift in Sources */,
+				46D7088921F80C970044F9EA /* SphFailServiceTests.swift in Sources */,
+				46D7088321F803EE0044F9EA /* Networking.swift in Sources */,
+				46D7088721F80C820044F9EA /* SphNextServiceTests.swift in Sources */,
+				46D7088421F803F30044F9EA /* APIConstants.swift in Sources */,
+				46D7088221F803910044F9EA /* MobileDataUsageStore.swift in Sources */,
+				46D7088021F8025B0044F9EA /* SphNetworkingTests.swift in Sources */,
+				46D7088121F802CA0044F9EA /* APIServices.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

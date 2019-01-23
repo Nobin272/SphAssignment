@@ -55,7 +55,7 @@ extension MobileDataUsageStore: APIServiceDelegate {
     func nextMobileDataUsageStore() {
         APIServices.shared.delegate = self
         self.serviceType = ApiServiceType.ApiServiceNext
-        if let next = nextUrl {
+        if let next = self.nextUrl {
             APIServices.shared.loadService(nextUrl: next)
         } else {
             self.delegate?.didDataChanged(newlyAdded: [])

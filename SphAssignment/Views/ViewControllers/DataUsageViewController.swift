@@ -134,11 +134,15 @@ extension DataUsageViewController: UITableViewDelegate, UITableViewDataSource, D
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Cell.DataEntryCell) as! DataEntryCell
         cell.record = tbData?[indexPath.row]
         cell.delegate = self
+        if indexPath.row % 2 == 0 {
+            cell.backgroundColor = UIColor.black.withAlphaComponent(0.1)
+        } else {
+            cell.backgroundColor = UIColor.white
+        }
         return cell
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        //return 3+
         return 1
     }
     
@@ -177,6 +181,12 @@ extension DataUsageViewController: UITableViewDelegate, UITableViewDataSource, D
         headerText.textColor = UIColor.gray
         headerText.font = Constants.SPHFont.fontLight13
         headerText.text = NSLocalizedString("DataUsageView.view.pullupMessage", comment: "")
+        if let tot = MobileDataUsageStore.shared.total, let rec = self.records?.count
+        {
+            if tot <= rec {
+                headerText.text = nil
+            }
+        }
         return footerView
     }
     
